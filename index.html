@@ -1,1 +1,431 @@
-Hello
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aurevia Travel</title>
+    <meta
+        name="description"
+        content="Aurevia Travel je demo moderní travel web app pro plánování cest, správu tripů a uživatelský účet."
+    />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="#home" class="brand" data-nav="home">
+                <span class="brand-mark">A</span>
+                <div class="brand-text">
+                    <strong>Aurevia Travel</strong>
+                    <span>Curated journeys with clarity</span>
+                </div>
+            </a>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Otevřít menu">
+                ☰
+            </button>
+
+            <nav class="main-nav" id="mainNav">
+                <button class="nav-link active" data-section="home">Domů</button>
+                <button class="nav-link" data-section="offers">Nabídka</button>
+                <button class="nav-link" data-section="my-trips">Moje cesty</button>
+                <button class="nav-link" data-section="auth">Přihlášení</button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HOME -->
+        <section id="home" class="page-section active">
+            <section class="hero">
+                <div class="hero-overlay"></div>
+                <div class="container hero-content">
+                    <div class="hero-text-card">
+                        <p class="eyebrow">Modern travel demo</p>
+                        <h1>Jednoduchý travel startup demo web, který působí jako skutečná služba.</h1>
+                        <p class="hero-text">
+                            Vyber si destinaci, sestav si cestu, přihlas se a ukládej své tripy do
+                            vlastního účtu. Čistě, přehledně a připravené pro online provoz.
+                        </p>
+                        <div class="hero-actions">
+                            <button class="btn btn-primary" data-section-target="offers">
+                                Zobrazit nabídku
+                            </button>
+                            <button class="btn btn-secondary" data-section-target="builder">
+                                Poskládej si svůj trip
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="highlights">
+                <div class="container">
+                    <div class="section-heading">
+                        <p class="eyebrow">Proč tenhle demo projekt</p>
+                        <h2>Postavené tak, aby ses na tom naučil základy od frontendu až po online provoz.</h2>
+                    </div>
+
+                    <div class="feature-grid">
+                        <article class="feature-card">
+                            <h3>Frontend-only základ</h3>
+                            <p>Čisté HTML, CSS a vanilla JavaScript bez frameworků a bez chaosu navíc.</p>
+                        </article>
+
+                        <article class="feature-card">
+                            <h3>Supabase auth</h3>
+                            <p>Přihlášení, registrace a ukládání dat podle přihlášeného uživatele.</p>
+                        </article>
+
+                        <article class="feature-card">
+                            <h3>Online nasazení</h3>
+                            <p>Projekt bude připravený na GitHub a deploy přes Vercel, aby fungoval i ostatním.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="home-offers-preview">
+                <div class="container">
+                    <div class="section-heading">
+                        <p class="eyebrow">Vybrané nabídky</p>
+                        <h2>Malá ukázka fake cest, které v appce použijeme.</h2>
+                    </div>
+
+                    <div class="offer-grid">
+                        <article class="offer-card">
+                            <div class="offer-badge">Premium escape</div>
+                            <h3>Lisabon Coastal Stay</h3>
+                            <p class="offer-location">Portugalsko</p>
+                            <p class="offer-description">
+                                Krátký městský pobyt s pobřežní atmosférou, stylovým hotelem a jednoduchým itinerářem.
+                            </p>
+                            <div class="offer-footer">
+                                <span class="price">od 12 990 Kč</span>
+                                <button class="btn btn-outline" data-section-target="builder">
+                                    Poskládat trip
+                                </button>
+                            </div>
+                        </article>
+
+                        <article class="offer-card">
+                            <div class="offer-badge">Best value</div>
+                            <h3>Split Seaside Weekend</h3>
+                            <p class="offer-location">Chorvatsko</p>
+                            <p class="offer-description">
+                                Rychlý víkend u moře, pohodový hotel, jednoduchý transfer a lokální doporučení.
+                            </p>
+                            <div class="offer-footer">
+                                <span class="price">od 9 490 Kč</span>
+                                <button class="btn btn-outline" data-section-target="builder">
+                                    Poskládat trip
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- OFFERS -->
+        <section id="offers" class="page-section">
+            <div class="container section-shell">
+                <div class="section-heading">
+                    <p class="eyebrow">Nabídka</p>
+                    <h2>Fake nabídka tripů pro demo aplikaci</h2>
+                    <p class="section-subtext">
+                        Tohle jsou ukázkové cesty. Později je napojíme na builder a uživatelské ukládání.
+                    </p>
+                </div>
+
+                <div class="offer-grid">
+                    <article class="offer-card">
+                        <div class="offer-badge">City + coast</div>
+                        <h3>Lisabon Coastal Stay</h3>
+                        <p class="offer-location">Lisabon, Portugalsko</p>
+                        <p class="offer-description">
+                            Elegantní krátký pobyt kombinující město, oceánský vzduch a jednoduchý plán výletů.
+                        </p>
+                        <ul class="offer-points">
+                            <li>3 noci</li>
+                            <li>Hotel v centru</li>
+                            <li>Možnost local guide</li>
+                        </ul>
+                        <div class="offer-footer">
+                            <span class="price">12 990 Kč</span>
+                            <button class="btn btn-primary" data-section-target="builder">
+                                Otevřít builder
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="offer-card">
+                        <div class="offer-badge">Relax</div>
+                        <h3>Split Seaside Weekend</h3>
+                        <p class="offer-location">Split, Chorvatsko</p>
+                        <p class="offer-description">
+                            Kratší pobyt u moře pro uživatele, kteří chtějí jednoduchou a přehlednou cestu.
+                        </p>
+                        <ul class="offer-points">
+                            <li>2–4 noci</li>
+                            <li>Blízko pobřeží</li>
+                            <li>Lehký itinerář</li>
+                        </ul>
+                        <div class="offer-footer">
+                            <span class="price">9 490 Kč</span>
+                            <button class="btn btn-primary" data-section-target="builder">
+                                Otevřít builder
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="offer-card">
+                        <div class="offer-badge">Popular</div>
+                        <h3>Nice Riviera Light</h3>
+                        <p class="offer-location">Nice, Francie</p>
+                        <p class="offer-description">
+                            Čistý a lehce premium pobyt s moderním hotelem a možností lokálního průvodce.
+                        </p>
+                        <ul class="offer-points">
+                            <li>3 noci</li>
+                            <li>Fake affiliate let</li>
+                            <li>Volitelný guide</li>
+                        </ul>
+                        <div class="offer-footer">
+                            <span class="price">14 790 Kč</span>
+                            <button class="btn btn-primary" data-section-target="builder">
+                                Otevřít builder
+                            </button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- BUILDER -->
+        <section id="builder" class="page-section">
+            <div class="container section-shell">
+                <div class="section-heading">
+                    <p class="eyebrow">Builder cesty</p>
+                    <h2>Poskládej si svůj trip</h2>
+                    <p class="section-subtext">
+                        Zatím jde o připravený formulář. V dalších krocích ho napojíme na login a Supabase.
+                    </p>
+                </div>
+
+                <div class="builder-layout">
+                    <form class="builder-form" id="tripBuilderForm">
+                        <div class="form-group">
+                            <label for="tripTitle">Název tripu</label>
+                            <input type="text" id="tripTitle" placeholder="Např. Jarní víkend v Lisabonu" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="destination">Destinace</label>
+                            <select id="destination">
+                                <option value="Lisabon, Portugalsko">Lisabon, Portugalsko</option>
+                                <option value="Split, Chorvatsko">Split, Chorvatsko</option>
+                                <option value="Nice, Francie">Nice, Francie</option>
+                            </select>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="startDate">Datum od</label>
+                                <input type="date" id="startDate" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="endDate">Datum do</label>
+                                <input type="date" id="endDate" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="travelers">Počet osob</label>
+                            <input type="number" id="travelers" min="1" value="2" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="flightName">Let</label>
+                            <select id="flightName">
+                                <option value="SkyJet 214 · Economy Flex">SkyJet 214 · Economy Flex</option>
+                                <option value="Atlantic Air 508 · Smart Saver">Atlantic Air 508 · Smart Saver</option>
+                                <option value="Blue Shore 110 · City Direct">Blue Shore 110 · City Direct</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hotelName">Hotel</label>
+                            <select id="hotelName">
+                                <option value="Hotel Aurelia Bay">Hotel Aurelia Bay</option>
+                                <option value="Marin Coast Suites">Marin Coast Suites</option>
+                                <option value="Vista Marina Rooms">Vista Marina Rooms</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="guideIncluded">Local guide</label>
+                            <select id="guideIncluded">
+                                <option value="yes">Ano</option>
+                                <option value="no">Ne</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full">
+                            Pořídit
+                        </button>
+                    </form>
+
+                    <aside class="summary-card" id="summaryCard">
+                        <p class="eyebrow">Shrnutí</p>
+                        <h3>Vybraný trip</h3>
+
+                        <div class="summary-list">
+                            <div class="summary-item">
+                                <span>Název</span>
+                                <strong id="summaryTitle">Jarní víkend v Lisabonu</strong>
+                            </div>
+
+                            <div class="summary-item">
+                                <span>Destinace</span>
+                                <strong id="summaryDestination">Lisabon, Portugalsko</strong>
+                            </div>
+
+                            <div class="summary-item">
+                                <span>Termín</span>
+                                <strong id="summaryDates">Vyber datum</strong>
+                            </div>
+
+                            <div class="summary-item">
+                                <span>Cestující</span>
+                                <strong id="summaryTravelers">2 osoby</strong>
+                            </div>
+
+                            <div class="summary-item">
+                                <span>Let</span>
+                                <strong id="summaryFlight">SkyJet 214 · Economy Flex</strong>
+                            </div>
+
+                            <div class="summary-item">
+                                <span>Hotel</span>
+                                <strong id="summaryHotel">Hotel Aurelia Bay</strong>
+                            </div>
+
+                            <div class="summary-item">
+                                <span>Guide</span>
+                                <strong id="summaryGuide">Ano</strong>
+                            </div>
+                        </div>
+
+                        <div class="summary-note">
+                            <p>
+                                Zatím se nic reálně neukládá. V dalším kroku sem přidáme skutečný login,
+                                potom ukládání do Supabase.
+                            </p>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- MY TRIPS -->
+        <section id="my-trips" class="page-section">
+            <div class="container section-shell">
+                <div class="section-heading">
+                    <p class="eyebrow">Moje cesty</p>
+                    <h2>Tady později uvidíš své uložené tripy</h2>
+                    <p class="section-subtext">
+                        Tahle sekce je už připravená na budoucí načítání dat z databáze.
+                    </p>
+                </div>
+
+                <div class="empty-state" id="emptyTripsState">
+    <h3>Zatím žádné uložené cesty</h3>
+    <p>
+        Jakmile vytvoříš svůj první trip, objeví se tady.
+    </p>
+    <button class="btn btn-secondary" data-section-target="builder">
+        Jít do builderu
+    </button>
+</div>
+
+<div class="trips-list hidden" id="tripsList"></div>
+
+                <div class="trips-list hidden" id="tripsList"></div>
+            </div>
+        </section>
+
+        <!-- AUTH -->
+        <section id="auth" class="page-section">
+            <div class="container section-shell auth-shell">
+                <div class="section-heading">
+                    <p class="eyebrow">Účet</p>
+                    <h2>Přihlášení a registrace</h2>
+                    <p class="section-subtext">
+                        Formuláře jsou připravené. V dalším kroku je napojíme na Supabase Auth.
+                    </p>
+                </div>
+
+                <div class="auth-grid">
+                    <form class="auth-card" id="loginForm">
+                        <h3>Přihlášení</h3>
+
+                        <div class="form-group">
+                            <label for="loginEmail">Email</label>
+                            <input type="email" id="loginEmail" placeholder="napr. email@example.com" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="loginPassword">Heslo</label>
+                            <input type="password" id="loginPassword" placeholder="••••••••" />
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full">
+                            Přihlásit se
+                        </button>
+                    </form>
+
+                    <form class="auth-card" id="registerForm">
+                        <h3>Registrace</h3>
+
+                        <div class="form-group">
+                            <label for="registerEmail">Email</label>
+                            <input type="email" id="registerEmail" placeholder="napr. email@example.com" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="registerPassword">Heslo</label>
+                            <input type="password" id="registerPassword" placeholder="min. 6 znaků" />
+                        </div>
+
+                        <button type="submit" class="btn btn-secondary btn-full">
+                            Vytvořit účet
+                        </button>
+                    </form>
+                </div>
+
+                <div class="auth-status-card">
+                    <p class="status-label">Stav přihlášení</p>
+                    <h3 id="authStatusText">Nepřihlášený uživatel</h3>
+                    <p id="authStatusSubtext">
+                        Zatím je to jen vizuální placeholder. Skutečný auth doplníme v dalším kroku.
+                    </p>
+                    <button class="btn btn-outline" id="logoutButton" type="button">
+                        Odhlásit
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>© 2026 Aurevia Travel — demo projekt pro výuku HTML, CSS, JS, Supabase a deploye.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="app.js"></script>
+</body>
+</html>
