@@ -1,0 +1,196 @@
+/* =======================
+   RESET / BASE
+======================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #2b0d0d, #5c1414);
+    min-height: 100vh;
+    color: #fff;
+}
+
+/* =======================
+   LAYOUT
+======================= */
+
+.partner-shell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+    min-height: 100vh;
+}
+
+.partner-card {
+    width: 100%;
+    max-width: 720px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 24px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* =======================
+   TOP BAR
+======================= */
+
+.partner-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.partner-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.partner-brand-mark {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: #ff4d4d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.partner-brand-text strong {
+    display: block;
+    font-size: 14px;
+}
+
+.partner-brand-text span {
+    font-size: 11px;
+    opacity: 0.7;
+}
+
+.partner-back-link {
+    font-size: 13px;
+    color: #ffb3b3;
+    text-decoration: none;
+}
+
+.partner-back-link:hover {
+    text-decoration: underline;
+}
+
+/* =======================
+   CONTENT STATES
+======================= */
+
+.partner-state {
+    text-align: center;
+    padding: 40px 16px;
+}
+
+.partner-eyebrow {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-bottom: 8px;
+}
+
+.partner-state h1 {
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.partner-state p {
+    opacity: 0.8;
+}
+
+/* =======================
+   OFFERS
+======================= */
+
+.partner-offers {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.partner-offer {
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 14px;
+    padding: 16px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.partner-offer:hover {
+    border-color: #ff4d4d;
+    background: rgba(255, 77, 77, 0.08);
+}
+
+.partner-offer.active {
+    border-color: #ff4d4d;
+    background: rgba(255, 77, 77, 0.15);
+}
+
+.partner-offer-title {
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.partner-offer-sub {
+    font-size: 13px;
+    opacity: 0.75;
+}
+
+.partner-offer-price {
+    margin-top: 8px;
+    font-weight: bold;
+    color: #ffb3b3;
+}
+
+/* =======================
+   CTA
+======================= */
+
+.partner-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.partner-btn {
+    background: #ff4d4d;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 999px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.partner-btn:hover {
+    background: #ff2e2e;
+}
+
+.partner-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* =======================
+   LOADING
+======================= */
+
+.partner-loading {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+    opacity: 0.8;
+}
