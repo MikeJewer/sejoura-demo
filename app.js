@@ -339,8 +339,6 @@ document.addEventListener("DOMContentLoaded", async () => {
                         payload?.old?.user_id ||
                         null;
 
-                    // Když user_id v payloadu nemáme (typicky blbě nastavený realtime/delete payload),
-                    // stejně radši reloadneme. Je to demo appka, ne jadernej reaktor.
                     if (!payloadUserId || payloadUserId === currentUser.id) {
                         await loadMyTrips();
                     }
@@ -607,7 +605,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                                     class="btn btn-primary trip-payment-btn"
                                     type="button"
                                     data-trip-id="${escapeHtml(trip.id)}"
-                                    data-step="1"
+                                    data-offer-type="flight"
                                     ${canPayFlight ? "" : "disabled"}
                                 >
                                     Zaplat let ✈️
@@ -623,7 +621,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                                     class="btn btn-secondary trip-payment-btn"
                                     type="button"
                                     data-trip-id="${escapeHtml(trip.id)}"
-                                    data-step="2"
+                                    data-offer-type="hotel"
                                     ${canPayHotel ? "" : "disabled"}
                                 >
                                     Zaplat hotel 🏨
@@ -849,9 +847,19 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             if (paymentButton) {
                 const tripId = paymentButton.dataset.tripId;
+                const offerType = paymentButton.dataset.offerType;
                 const step = Number(paymentButton.dataset.step);
 
-                if (!tripId || !step) {
+                if (!tripId) {
+                    return;
+                }
+
+                if (offerType === "flight" || offerType === "hotel") {
+                    window.location.href = `partner.html?tripId=${encodeURIComponent(tripId)}&offerType=${encodeURIComponent(offerType)}`;
+                    return;
+                }
+
+                if (!step) {
                     return;
                 }
 
