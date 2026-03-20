@@ -571,6 +571,10 @@ document.addEventListener("DOMContentLoaded", async () => {
                     flight_name: flightName,
                     hotel_name: hotelName,
                     guide_included: guideIncluded
+                    status: "draft",
+                    paid_flight: false,
+                    paid_hotel: false,
+                    paid_guide: false,
                 };
 
                 const { error: insertError } = await supabaseClient
